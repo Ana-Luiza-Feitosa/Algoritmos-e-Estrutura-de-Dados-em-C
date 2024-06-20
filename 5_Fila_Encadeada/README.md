@@ -1,12 +1,12 @@
 # Fila Encadeada
 
-1. Conceito 
-2. Definição das estrututras de dados
-3. Operações básicas
-4. Implementação da Fila Encadeada
-5. [Algortimos e soluções](/6_Fila_Encadeada/)
+1. [Conceito](#conceito-e-exemplos) 
+2. [Definição das estrututras de dados](#definição-das-estruturas-de-dados)
+3. [Operações básicas](#operações-básicas)
+4. [Implementação da Fila Encadeada](/5_Fila_Encadeada/implementacao.c)
+5. [Algortimos e soluções](/5_Fila_Encadeada/exercicios)
 
-## Conceito e exemplos
+## Conceito e aplicaçõoes
 **Filas** são estruturas nas quais é possível inserir elementos em uma extremidade e retirar da outra. São conhecidas por serem estruturas do tipo FIFO, ou seja, o primeiro elemento a entrar é também o primeiro a sair.
 
 > FIFO: First-in, First-out

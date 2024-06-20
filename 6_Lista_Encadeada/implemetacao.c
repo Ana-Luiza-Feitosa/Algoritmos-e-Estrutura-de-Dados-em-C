@@ -55,7 +55,6 @@ void insert_ini(PLista lista, int dado){
     else
         novo->prox = lista->inicio; //O próximo elemento do novo nó aponta para o início da lista
     lista->inicio = novo; //Atribui o novo nó ao início da lista
-
 }  
 
 
@@ -96,7 +95,7 @@ void insere_meio(PLista lista, int posicao, int dado){
 }
 
 /*
- * Função para inserir um novo nó no final da lista
+ * Função para inserir um novo nó no final da lista.
  * @param lista: ponteiro para a estrutura do tipo lista, na qual o novo nó será inserido
  * @param dado: informação que será inserida no no nó, do tipo inteiro
 */
@@ -135,7 +134,7 @@ PNo busca_elemento(PLista lista, int info){
 
 
 /*
- * Função para buscar um elemento na lista.
+ * Função para buscar um elemento na lista e remove-lo. 
  * @param lista: ponteiro para a estrutura do tipo lista
  * @param info: informação buscada na lista, do tipo inteiro
 */

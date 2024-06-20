@@ -1,17 +1,18 @@
 # Pliha Simplesmente encadeada
 
-1. Conceito 
-2. Definição das estrututras de dados
-3. Operações básicas
-4. Implementação da Fila Encadeada
-5. [Algortimos e soluções](/4_Pilha_Encadeada/)
+1. [Conceito](#conceito-e-exemplos) 
+2. [Definição das estrututras de dados](#definição-das-estrututras-de-dados)
+3. [Operações básicas](#operações-básicas)
+4. [Implementação da Fila Encadeada](/4_Pilha_Encadeada/implementacao.c)
+5. [Algortimos e soluções](/4_Pilha_Encadeada/exercicios)
+     - [Notação Polonesa](/4_Pilha_Encadeada/exercicios/notacao_polonesa.c)
+ 
   
 
 ----
 <br>  
 
-## Conceito
-
+## Conceito e aplicações
 **Pilhas** são estruturas de dados na qual o novo elemento é sempre inserido após os que já estão na estrutura, e o elemento retirado é sempre o último que foi inserido. A estrutura do tipo pilha recebe esse nome pois os elementos são armazenados sequencialmente, **empilhando** um em cima do outro. Além disso, a pilhas são comumnete chamadas de estruturas LIFO, pois o último elemento a entrar na pilha será o primeiro a sair.
 
 > LIFO: Last-In, First-Out
@@ -160,12 +161,4 @@ void libera(PPilha pilha){
 ```
 
 
-## Arquivos úteis
 
-### Implementação 
-A implementação completa das estruturas com as operações básicas você encontra no diretório 4_Pilha_Encadeada no arquivo [implementacao.c](/5_Pilha_Encadeada/implementacao.c)
-
-### Algoritmos e soluções
-Para fixar a utilização de pilhas, foram resolvidos alguns problemas usuais, em que a utilização de pilhas é mais frequente. Os algortimos criados estão listados abaixo, ou também podem ser encontrados seguindo o caminho 4_Pilha_Encadeada -> [algortimos](/4_Pilha_Encadeada/exercicios)
-- [Notação Polonesa](/4_Pilha_Encadeada/exercicios/notacao_polonesa.c)
-- 
