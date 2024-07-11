@@ -1,15 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-# define MAX_PILHA 100
+#define MAX_PILHA 100 //Define o tamnho máximo de elementos da pilha
 
+//Definição da estrutura do tipo pilha
 typedef struct pilha{ 
   int elemento[MAX_PILHA];
   int topo;
 }TPilha;
+typedef TPilha *PPilha; //Ponteiro para a estrutura do tipo pilha
 
-typedef TPilha *PPilha;
-
+/*
+ Função para alocar espaço de memória para uma nova pilha e iniciar o topo com -1
+ @return nova: ponteiro para a estrutura do tipo pilha
+*/
 PPilha cria_pilha(){
   PPilha nova = (PPilha)malloc(sizeof(TPilha)); 
   nova->topo = -1;
