@@ -8,6 +8,9 @@ typedef struct lista_circular{
 }TLista_C;
 typedef TLista_C *PLista_C;
 
+/*
+ Função para criar uma lista vazia. Por padrão, uma lista vazia é uma lista nula.
+*/
 PLista_C cria_lista(){
     return NULL;
 }
@@ -25,12 +28,13 @@ PLista_C insereInicio(PLista_C ultimo, int dado){
         novo -> prox = novo; //Lista com um único elemento
         return novo; //Retorna o último nó, que é o único elemento da lista
     }
-    //Adiciona o novo nó no início da fila
+    //Adiciona o novo nó no início da lista circular
     novo -> prox = ultimo -> prox; //O novo nó aponta para o antigo início da lista circular
     ultimo -> prox = novo; // atualiza o início da fila, fazendo com que o último nó aponte para o novo nó
 
     return ultimo; //Retorna o último elemento da lista, que permaneceu inalterado
 }
+//OBSERVAÇÃO: A inserção no final da lista é feita da mesma maneira que a inserção no início. A única diferença é que, para a inserção no fim, o nó retornado será o novo nó que acabou de ser adicionado.
 
 
 /*
@@ -82,8 +86,46 @@ PLista_C removeElemento(PLista_C ultimo, int info){
         } else {
             ant->prox = ultimo->prox; //Atualiza o poteiro do nó anterior ao último, apontando para o primeiro
             free(ultimo); //Libera o espaço de memória do elemento removido
-            ultimo = ant;
+            ultimo = ant; //Atualiza o novo último elemento da lista circular
         }
     }
     return ultimo; //Retorna o último elemento da lista circular
+}
+
+/*
+ Função que lista todos os elementos da lista circular.
+ @param ultimo: ponteiro para a estrutura do tipo lista circular, que referencia o endereço de meória do último nó da lista.
+*/
+int listarElementos(PLista_C ultimo){
+    if(ultimo == NULL) //Se a lista circular estiver vazia, retorna -1
+        return -1;
+    PLista_C aux; //Ponteiro auxiliar, para ajudar a percorrer a lista circular encadeada
+    for(aux = ultimo -> prox; aux != ultimo; aux = aux -> prox) //Percorre a lista, a partir do primeiro elemento, enquanto o ponteiro auxiliar não apontar para o ultimo elemento
+        printf("%d, ", aux->info); //Imprime a informação armazenada temporariamente no nó auxiliar
+
+    printf("%d.\n", ultimo->info);//Por fim, imprime a informação no último no
+    return 0; 
+}
+
+
+/*
+ Função para liberar o espaço de memória alocado para todos os nós a lista circular.
+ @param ultimo: ponteiro para a estrutura do tipo lista circular, que referenca o endnereço de memória do último nó da lista circular
+*/
+PLista_C liberarListaCirc(PLista_C ultimo){
+    if(ultimo == NULL)//Se a lista estiver vazia, retorna NULL
+        return NULL;
+    PLista_C aux, no_removido;
+
+    for(aux = ultimo->prox; aux!=ultimo;aux=aux->prox){
+        no_removido = aux;
+        ultimo->prox = aux->prox;
+        free(no_removido);
+    }
+    free(ultimo);
+    return NULL;//Lista vazia, retorna NULL
+}
+
+int main(){
+    return 0;
 }
